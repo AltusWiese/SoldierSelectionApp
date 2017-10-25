@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/display_soldier_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/display_soldier_alias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test"
+        app:layout_constraintLeft_toRightOf="@+id/display_soldier_name"
+        app:layout_constraintTop_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/display_soldier_nationality"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test"
+        app:layout_constraintLeft_toRightOf="@+id/display_soldier_alias"
+        app:layout_constraintTop_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/display_soldier_unit_class"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test"
+        app:layout_constraintLeft_toRightOf="@+id/display_soldier_nationality"
+        app:layout_constraintTop_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/display_soldier_aim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/display_soldier_name" />
+
+    <TextView
+        android:id="@+id/display_soldier_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test"
+        app:layout_constraintLeft_toRightOf="@+id/display_soldier_aim"
+        app:layout_constraintTop_toBottomOf="@+id/display_soldier_alias" />
+
+    <TextView
+        android:id="@+id/display_soldier_will"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test"
+        app:layout_constraintLeft_toRightOf="@+id/display_soldier_speed"
+        app:layout_constraintTop_toBottomOf="@+id/display_soldier_nationality" />
+
+    <TextView
+        android:id="@+id/display_soldier_defense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test"
+        app:layout_constraintLeft_toRightOf="@+id/display_soldier_will"
+        app:layout_constraintTop_toBottomOf="@+id/display_soldier_unit_class" />
+
+</android.support.constraint.ConstraintLayout>
