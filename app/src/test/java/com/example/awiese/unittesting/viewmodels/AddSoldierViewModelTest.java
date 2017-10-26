@@ -2,7 +2,6 @@ package com.example.awiese.unittesting.viewmodels;
 
 import com.example.awiese.unittesting.model.SoldierUnitModel;
 import com.example.awiese.unittesting.repository.SoldierRepository;
-import com.example.awiese.unittesting.utils.SingleLiveEvent;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -13,6 +12,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.robolectric.RobolectricTestRunner;
 
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.verify;
 
@@ -21,10 +21,9 @@ public class AddSoldierViewModelTest {
 
     @Mock
     private SoldierRepository soldierRepository;
+
     @Captor
     private ArgumentCaptor<SoldierRepository.SoldierRepositoryCallback> soldierRepositoryCallbackArgumentCaptor = ArgumentCaptor.forClass(SoldierRepository.SoldierRepositoryCallback.class);
-
-    SingleLiveEvent<Boolean> addSoldierEvent;
 
     private AddSoldierViewModel addSoldierViewModel;
 
@@ -41,24 +40,23 @@ public class AddSoldierViewModelTest {
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
         addSoldierViewModel = new AddSoldierViewModel(soldierRepository);
-        addSoldierEvent = new SingleLiveEvent<>();
     }
 
     @Test
     public void addNewSoldier_DatabaseWorks_AddToDbSuccess() {
-        //Given repository returns correctly
 
         addSoldierViewModel.addNewSoldier(soldierName, soldierAlias, soldierNationality, soldierUnitClass, soldierAim, soldierSpeed, soldierWill, soldierDefense);
-
         verify(soldierRepository).addSoldier(any(SoldierUnitModel.class), soldierRepositoryCallbackArgumentCaptor.capture());
         soldierRepositoryCallbackArgumentCaptor.getValue().onSuccess();
-        addSoldierEvent = addSoldierViewModel.addSoldierEvent;
-        verify(addSoldierEvent).setValue(true);
+        assertEquals(true, addSoldierViewModel.addSoldierEvent.getValue());
     }
 
     @Test
-    public void CheckIf_AddNewSoldier_AddedToDbUnsuccessfully() {
-
+    public void addNewSoldier_DatabaseWorks_AddToDbFailed() {
+        addSoldierViewModel.addNewSoldier(soldierName, soldierAlias, soldierNationality, soldierUnitClass, soldierAim, soldierSpeed, soldierWill, soldierDefense);
+        verify(soldierRepository).addSoldier(any(SoldierUnitModel.class), soldierRepositoryCallbackArgumentCaptor.capture());
+        soldierRepositoryCallbackArgumentCaptor.getValue().onError();
+        assertEquals(false, addSoldierViewModel.addSoldierEvent.getValue());
     }
 
 
