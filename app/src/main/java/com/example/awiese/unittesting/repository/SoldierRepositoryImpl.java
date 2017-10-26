@@ -77,6 +77,8 @@ public class SoldierRepositoryImpl implements SoldierRepository {
             super.onPostExecute(aVoid);
             if (soldierRepositoryCallback != null) {
                 soldierRepositoryCallback.onSuccess();
+            } else {
+                soldierRepositoryCallback.onError();
             }
         }
     }
