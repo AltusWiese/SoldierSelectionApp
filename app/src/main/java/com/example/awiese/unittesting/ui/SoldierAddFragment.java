@@ -49,7 +49,6 @@ public class SoldierAddFragment extends Fragment {
         String soldierAlias = addSoldierAlias.getText().toString();
         String soldierNationality = addSoldierNationality.getText().toString();
         String soldierUnitClass = addSoldierUnitClass.getText().toString();
-        int soldierId = 0;
         int soldierAim = 56;
         int soldierSpeed = 67;
         int soldierWill = 45;
@@ -59,7 +58,7 @@ public class SoldierAddFragment extends Fragment {
         soldierRepository = new SoldierRepositoryImpl(soldierDao);
         addSoldierViewModel = new AddSoldierViewModel(soldierRepository);
 
-        addSoldierViewModel.addNewSoldier(soldierId, soldierName, soldierAlias, soldierNationality,
+        addSoldierViewModel.addNewSoldier(soldierName, soldierAlias, soldierNationality,
                 soldierUnitClass, soldierAim, soldierSpeed, soldierWill, soldierDefense);
     }
 

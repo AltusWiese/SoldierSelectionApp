@@ -3,6 +3,7 @@ package com.example.awiese.unittesting.model;
 import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 
 import java.util.List;
@@ -40,6 +41,19 @@ public class SoldierUnitModel {
     public SoldierUnitModel(int soldierId, String soldierName, String soldierAlias, String soldierNationality, String soldierUnitClass,
                             int soldierAim, int soldierSpeed, int soldierWill, int soldierDefense) {
         this.soldierId = soldierId;
+        this.soldierName = soldierName;
+        this.soldierAlias = soldierAlias;
+        this.soldierNationality = soldierNationality;
+        this.soldierUnitClass = soldierUnitClass;
+        this.soldierAim = soldierAim;
+        this.soldierSpeed = soldierSpeed;
+        this.soldierWill = soldierWill;
+        this.soldierDefense = soldierDefense;
+    }
+
+    @Ignore
+    public SoldierUnitModel(String soldierName, String soldierAlias, String soldierNationality, String soldierUnitClass,
+                            int soldierAim, int soldierSpeed, int soldierWill, int soldierDefense) {
         this.soldierName = soldierName;
         this.soldierAlias = soldierAlias;
         this.soldierNationality = soldierNationality;
