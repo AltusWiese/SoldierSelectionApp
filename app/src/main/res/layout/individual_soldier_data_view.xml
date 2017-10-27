@@ -9,7 +9,6 @@
         android:id="@+id/display_soldier_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Test"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -17,7 +16,6 @@
         android:id="@+id/display_soldier_alias"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Test"
         app:layout_constraintLeft_toRightOf="@+id/display_soldier_name"
         app:layout_constraintTop_toBottomOf="parent" />
 
@@ -25,7 +23,6 @@
         android:id="@+id/display_soldier_nationality"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Test"
         app:layout_constraintLeft_toRightOf="@+id/display_soldier_alias"
         app:layout_constraintTop_toBottomOf="parent" />
 
@@ -33,7 +30,6 @@
         android:id="@+id/display_soldier_unit_class"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Test"
         app:layout_constraintLeft_toRightOf="@+id/display_soldier_nationality"
         app:layout_constraintTop_toBottomOf="parent" />
 
@@ -41,7 +37,6 @@
         android:id="@+id/display_soldier_aim"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Test"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/display_soldier_name" />
 
@@ -49,7 +44,6 @@
         android:id="@+id/display_soldier_speed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Test"
         app:layout_constraintLeft_toRightOf="@+id/display_soldier_aim"
         app:layout_constraintTop_toBottomOf="@+id/display_soldier_alias" />
 
@@ -57,7 +51,6 @@
         android:id="@+id/display_soldier_will"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Test"
         app:layout_constraintLeft_toRightOf="@+id/display_soldier_speed"
         app:layout_constraintTop_toBottomOf="@+id/display_soldier_nationality" />
 
@@ -65,7 +58,6 @@
         android:id="@+id/display_soldier_defense"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Test"
         app:layout_constraintLeft_toRightOf="@+id/display_soldier_will"
         app:layout_constraintTop_toBottomOf="@+id/display_soldier_unit_class" />
 
