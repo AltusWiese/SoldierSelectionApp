@@ -9,19 +9,18 @@ import android.view.ViewGroup;
 import com.example.awiese.unittesting.R;
 import com.example.awiese.unittesting.model.SoldierUnitModel;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class SoldierDisplayAdapter extends RecyclerView.Adapter<SoldierDisplayViewHolder> {
 
     private final Context context;
-    private ArrayList<SoldierUnitModel> listOfAllSoldiers;
-    private View.OnClickListener showAllSoldiersClickListener;
+    private List<SoldierUnitModel> listOfAllSoldiers;
 
 
-    SoldierDisplayAdapter(ArrayList<SoldierUnitModel> listOfAllSoldiers,Context context, View.OnClickListener showAllSoldiersClickListener) {
+    SoldierDisplayAdapter(List<SoldierUnitModel> listOfAllSoldiers,Context context) {
         this.listOfAllSoldiers = listOfAllSoldiers;
         this.context = context;
-        this.showAllSoldiersClickListener = showAllSoldiersClickListener;
+
     }
     @Override
     public SoldierDisplayViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -33,22 +32,24 @@ public class SoldierDisplayAdapter extends RecyclerView.Adapter<SoldierDisplayVi
     @Override
     public void onBindViewHolder(SoldierDisplayViewHolder holder, int position) {
     SoldierUnitModel soldierUnitModel = listOfAllSoldiers.get(position);
-    holder.soldierNameTextView.setText(soldierUnitModel.getSoldierName().toString());
+    holder.soldierNameTextView.setText(soldierUnitModel.getSoldierName());
     holder.soldierAliasTextView.setText(soldierUnitModel.getSoldierAlias());
     holder.soldierNationalityTextView.setText(soldierUnitModel.getSoldierNationality());
     holder.soldierUnitClassTextView.setText(soldierUnitModel.getSoldierUnitClass());
-    holder.soldierAimTextView.setText(soldierUnitModel.getSoldierAim());
-    holder.soldierSpeedTextView.setText(soldierUnitModel.getSoldierSpeed());
-    holder.soldierWillTextView.setText(soldierUnitModel.getSoldierWill());
-    holder.soldierDefenseTextView.setText(soldierUnitModel.getSoldierDefense());
+    holder.soldierAimTextView.setText(String.valueOf(soldierUnitModel.getSoldierAim()));
+    holder.soldierSpeedTextView.setText(String.valueOf(soldierUnitModel.getSoldierSpeed()));
+    holder.soldierWillTextView.setText(String.valueOf(soldierUnitModel.getSoldierWill()));
+    holder.soldierDefenseTextView.setText(String.valueOf(soldierUnitModel.getSoldierDefense()));
     }
 
     @Override
     public int getItemCount() {
         return listOfAllSoldiers.size();
     }
-    void setItems(ArrayList<SoldierUnitModel> soldiers) {
+    void setItems(List<SoldierUnitModel> soldiers) {
         this.listOfAllSoldiers = soldiers;
         notifyDataSetChanged();
     }
+
+
 }

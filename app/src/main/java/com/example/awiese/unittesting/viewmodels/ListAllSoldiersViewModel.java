@@ -20,17 +20,13 @@ public class ListAllSoldiersViewModel extends AndroidViewModel {
     private SoldierRepository soldierRepository;
     private LiveData<List<SoldierUnitModel>> listOfSoldiers = new MutableLiveData<>();
 
-
     public ListAllSoldiersViewModel(Application application) {
         super(application);
     }
-//    public ListAllSoldiersViewModel(SoldierRepository soldierRepository) {
-//        this.soldierRepository = soldierRepository;
-//
-//    }
+
 
     public LiveData<List<SoldierUnitModel>> getListOfSoldiers() {
-        soldierDao = SoldierDatabase.getInstance(getApplication()).soldierDao();
+        soldierDao = SoldierDatabase.getInstance(this.getApplication()).soldierDao();
         soldierRepository = new SoldierRepositoryImpl(soldierDao);
         listOfSoldiers = soldierRepository.listAllSoldiers();
         return listOfSoldiers;

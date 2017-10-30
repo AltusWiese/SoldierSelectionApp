@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/soldier_add_fragment"
                 tools:layout="@layout/soldier_display_fragment" />
 
             <fragment
@@ -34,7 +34,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/soldier_display_fragment"
+                app:layout_constraintTop_toBottomOf="parent"
                 tools:layout="@layout/soldier_add_new_fragment" />
 
         </android.support.constraint.ConstraintLayout>
