@@ -3,7 +3,7 @@ package com.example.awiese.unittesting.viewmodels;
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.ViewModel;
+import android.arch.lifecycle.MutableLiveData;
 
 import com.example.awiese.unittesting.dao.SoldierDao;
 import com.example.awiese.unittesting.db.SoldierDatabase;
@@ -21,11 +21,11 @@ public class ListMostDurableSoldiersViewModel extends AndroidViewModel {
 
     private SoldierDao soldierDao;
     private SoldierRepository soldierRepository;
-    private LiveData<List<SoldierUnitModel>> listOfSoldiers;
+    private LiveData<List<SoldierUnitModel>> listOfSoldiers = new MutableLiveData<>();
 
-    public ListMostDurableSoldiersViewModel(Application application, SoldierRepository soldierRepository) {
+    public ListMostDurableSoldiersViewModel(Application application) {
         super(application);
-        this.soldierRepository = soldierRepository;
+
 
     }
 
@@ -33,7 +33,6 @@ public class ListMostDurableSoldiersViewModel extends AndroidViewModel {
         soldierDao = SoldierDatabase.getInstance(this.getApplication()).soldierDao();
         soldierRepository = new SoldierRepositoryImpl(soldierDao);
         listOfSoldiers = soldierRepository.listMostDurableSoldiers();
-     //   listOfSoldiers = soldierDao.getMostHardenedSoldiers(defense);
         return listOfSoldiers;
     }
 }

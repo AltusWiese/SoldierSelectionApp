@@ -1,72 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/soldier_name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        android:text="Name: "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/display_soldier_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Test"
-        app:layout_constraintStart_toStartOf="parent"
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        android:text="TEST"
+        app:layout_constraintLeft_toRightOf="@+id/soldier_name_text"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/soldier_alias_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        android:text="Alias :"
+        app:layout_constraintLeft_toRightOf="@+id/display_soldier_name"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/display_soldier_alias"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Test"
-        app:layout_constraintLeft_toRightOf="@+id/display_soldier_name"
-        app:layout_constraintTop_toBottomOf="parent" />
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        android:text="TEST"
+        app:layout_constraintLeft_toRightOf="@+id/soldier_alias_text"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/soldier_nationality_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        android:text="Nationality :"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/soldier_name_text" />
 
     <TextView
         android:id="@+id/display_soldier_nationality"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Test"
-        app:layout_constraintLeft_toRightOf="@+id/display_soldier_alias"
-        app:layout_constraintTop_toBottomOf="parent" />
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        android:text="TEST"
+        app:layout_constraintLeft_toRightOf="@+id/soldier_nationality_text"
+        app:layout_constraintTop_toBottomOf="@+id/display_soldier_name" />
+
+    <TextView
+        android:id="@+id/soldier_unit_class_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        android:text="Unit Class :"
+        app:layout_constraintLeft_toRightOf="@+id/display_soldier_nationality"
+        app:layout_constraintTop_toBottomOf="@+id/soldier_alias_text" />
 
     <TextView
         android:id="@+id/display_soldier_unit_class"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Test"
-        app:layout_constraintLeft_toRightOf="@+id/display_soldier_nationality"
-        app:layout_constraintTop_toBottomOf="parent" />
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        android:text="TEST"
+        app:layout_constraintLeft_toRightOf="@+id/soldier_unit_class_text"
+        app:layout_constraintTop_toBottomOf="@+id/display_soldier_alias" />
+
+    <TextView
+        android:id="@+id/soldier_aim_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        android:text="Aim :"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/soldier_nationality_text" />
 
     <TextView
         android:id="@+id/display_soldier_aim"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Test"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/display_soldier_name" />
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        android:text="TEST"
+        app:layout_constraintLeft_toRightOf="@+id/soldier_aim_text"
+        app:layout_constraintTop_toBottomOf="@+id/display_soldier_nationality" />
+
+    <TextView
+        android:id="@+id/soldier_speed_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        android:text="Speed :"
+        app:layout_constraintLeft_toRightOf="@+id/display_soldier_aim"
+        app:layout_constraintTop_toBottomOf="@+id/soldier_nationality_text" />
 
     <TextView
         android:id="@+id/display_soldier_speed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Test"
-        app:layout_constraintLeft_toRightOf="@+id/display_soldier_aim"
-        app:layout_constraintTop_toBottomOf="@+id/display_soldier_alias" />
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        android:text="TEST"
+        app:layout_constraintLeft_toRightOf="@+id/soldier_speed_text"
+        app:layout_constraintTop_toBottomOf="@+id/display_soldier_nationality" />
+
+    <TextView
+        android:id="@+id/soldier_will_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        android:text="Will :"
+        app:layout_constraintLeft_toRightOf="@+id/display_soldier_speed"
+        app:layout_constraintTop_toBottomOf="@+id/soldier_nationality_text" />
 
     <TextView
         android:id="@+id/display_soldier_will"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Test"
-        app:layout_constraintLeft_toRightOf="@+id/display_soldier_speed"
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        android:text="TEST"
+        app:layout_constraintLeft_toRightOf="@+id/soldier_will_text"
         app:layout_constraintTop_toBottomOf="@+id/display_soldier_nationality" />
+
+    <TextView
+        android:id="@+id/soldier_defense_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        android:text="Defense :"
+        app:layout_constraintLeft_toRightOf="@+id/display_soldier_will"
+        app:layout_constraintTop_toBottomOf="@+id/display_soldier_unit_class" />
 
     <TextView
         android:id="@+id/display_soldier_defense"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Test"
-        app:layout_constraintLeft_toRightOf="@+id/display_soldier_will"
-        app:layout_constraintTop_toBottomOf="@+id/display_soldier_unit_class" />
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        android:text="TEST"
+        app:layout_constraintLeft_toRightOf="@+id/soldier_defense_text"
+        app:layout_constraintTop_toBottomOf="@+id/display_soldier_nationality" />
 
 </android.support.constraint.ConstraintLayout>

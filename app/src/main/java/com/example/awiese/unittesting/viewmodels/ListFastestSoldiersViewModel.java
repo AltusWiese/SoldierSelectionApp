@@ -3,7 +3,7 @@ package com.example.awiese.unittesting.viewmodels;
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.ViewModel;
+import android.arch.lifecycle.MutableLiveData;
 
 import com.example.awiese.unittesting.dao.SoldierDao;
 import com.example.awiese.unittesting.db.SoldierDatabase;
@@ -21,11 +21,10 @@ public class ListFastestSoldiersViewModel extends AndroidViewModel {
 
     private SoldierDao soldierDao;
     private SoldierRepository soldierRepository;
-    private LiveData<List<SoldierUnitModel>> listOfSoldiers;
+    private LiveData<List<SoldierUnitModel>> listOfSoldiers = new MutableLiveData<>();
 
-    public ListFastestSoldiersViewModel(Application application, SoldierRepository soldierRepository) {
+    public ListFastestSoldiersViewModel(Application application) {
         super(application);
-        this.soldierRepository = soldierRepository;
 
     }
 
@@ -33,7 +32,6 @@ public class ListFastestSoldiersViewModel extends AndroidViewModel {
         soldierDao = SoldierDatabase.getInstance(this.getApplication()).soldierDao();
         soldierRepository = new SoldierRepositoryImpl(soldierDao);
         listOfSoldiers = soldierRepository.listFastestSoldiers();
-     //   listOfSoldiers = soldierDao.getFastestSoldiers(speed);
         return listOfSoldiers;
     }
 }

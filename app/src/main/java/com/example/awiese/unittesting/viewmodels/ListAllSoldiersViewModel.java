@@ -4,7 +4,6 @@ import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.ViewModel;
 
 import com.example.awiese.unittesting.dao.SoldierDao;
 import com.example.awiese.unittesting.db.SoldierDatabase;
@@ -15,23 +14,21 @@ import com.example.awiese.unittesting.repository.SoldierRepositoryImpl;
 import java.util.List;
 
 
-public class ListAllSoldiersViewModel extends ViewModel {
+public class ListAllSoldiersViewModel extends AndroidViewModel {
 
-
-   private SoldierDao soldierDao;
+    private SoldierDao soldierDao;
     private SoldierRepository soldierRepository;
-    private LiveData<List<SoldierUnitModel>> listOfSoldiers = new LiveData<List<SoldierUnitModel>>() {
-    };
+    private LiveData<List<SoldierUnitModel>> listOfSoldiers = new MutableLiveData<>();
 
-    public ListAllSoldiersViewModel(SoldierRepository soldierRepository) {
-        this.soldierRepository = soldierRepository;
-
+    public ListAllSoldiersViewModel(Application application) {
+        super(application);
     }
 
-    public LiveData<List<SoldierUnitModel>> getListOfSoldiers() {
 
+    public LiveData<List<SoldierUnitModel>> getListOfSoldiers() {
+        soldierDao = SoldierDatabase.getInstance(this.getApplication()).soldierDao();
+        soldierRepository = new SoldierRepositoryImpl(soldierDao);
         listOfSoldiers = soldierRepository.listAllSoldiers();
-      //  listOfSoldiers = soldierDao.getAllSoldiers();
         return listOfSoldiers;
     }
 

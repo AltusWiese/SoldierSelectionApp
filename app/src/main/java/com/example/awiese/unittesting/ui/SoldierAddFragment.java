@@ -17,6 +17,8 @@ import com.example.awiese.unittesting.repository.SoldierRepository;
 import com.example.awiese.unittesting.repository.SoldierRepositoryImpl;
 import com.example.awiese.unittesting.viewmodels.AddSoldierViewModel;
 
+import java.util.Random;
+
 public class SoldierAddFragment extends Fragment {
 
     private static final String TAG = "SoldierAddFragment";
@@ -49,10 +51,10 @@ public class SoldierAddFragment extends Fragment {
         String soldierAlias = addSoldierAlias.getText().toString();
         String soldierNationality = addSoldierNationality.getText().toString();
         String soldierUnitClass = addSoldierUnitClass.getText().toString();
-        int soldierAim = 56;
-        int soldierSpeed = 67;
-        int soldierWill = 45;
-        int soldierDefense = 82;
+        int soldierAim = randomStatsGenerator();
+        int soldierSpeed = randomStatsGenerator();
+        int soldierWill = randomStatsGenerator();
+        int soldierDefense = randomStatsGenerator();
 
         soldierDao = SoldierDatabase.getInstance(getContext()).soldierDao();
         soldierRepository = new SoldierRepositoryImpl(soldierDao);
@@ -60,6 +62,11 @@ public class SoldierAddFragment extends Fragment {
 
         addSoldierViewModel.addNewSoldier(soldierName, soldierAlias, soldierNationality,
                 soldierUnitClass, soldierAim, soldierSpeed, soldierWill, soldierDefense);
+    }
+
+    public int randomStatsGenerator() {
+        Random randomStatGenerator = new Random();
+        return randomStatGenerator.nextInt(90 - 20) + 20;
     }
 
     private void setupViews(View view) {
