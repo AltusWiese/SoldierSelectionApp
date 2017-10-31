@@ -2,6 +2,7 @@ package com.example.awiese.unittesting.repository;
 
 import android.arch.lifecycle.LiveData;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.example.awiese.unittesting.dao.SoldierDao;
 import com.example.awiese.unittesting.model.SoldierUnitModel;
@@ -9,14 +10,17 @@ import com.example.awiese.unittesting.model.SoldierUnitModel;
 import java.util.List;
 
 
-public class SoldierRepositoryImpl implements SoldierRepository {
+public class SoldierRepositoryImpl implements SoldierRepository, SoldierRepository.SoldierRepositoryCallback {
 
-    private SoldierDao soldierDao;
+    private final SoldierDao soldierDao;
     private LiveData<List<SoldierUnitModel>> listOfSoldiers;
-    private int bestSoldiers = 75;
+    private final int bestSoldiers = 75;
+
     public SoldierRepositoryImpl(SoldierDao soldierDao) {
         this.soldierDao = soldierDao;
     }
+
+
 
 
     @Override
@@ -55,15 +59,29 @@ public class SoldierRepositoryImpl implements SoldierRepository {
         return listOfSoldiers;
     }
 
+    @Override
+    public void onSuccess() {
+        Log.d("Awe", "DIE POEF WERK!");
+    }
+
+    @Override
+    public void onError() {
+
+    }
 
     private static class SoldierAsyncTask extends AsyncTask<SoldierUnitModel, Void, Void> {
 
-        private SoldierDao soldierDao;
-        private SoldierRepositoryCallback soldierRepositoryCallback;
+        private boolean callbackSuccess;
+        private final SoldierDao soldierDao;
+        private final SoldierRepositoryCallback soldierRepositoryCallback;
 
         SoldierAsyncTask(SoldierRepositoryCallback callback, SoldierDao soldierDao) {
             soldierRepositoryCallback = callback;
             this.soldierDao = soldierDao;
+            if (soldierRepositoryCallback != null) {
+                callbackSuccess = true;
+            }
+
         }
 
         @Override
@@ -75,7 +93,7 @@ public class SoldierRepositoryImpl implements SoldierRepository {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            if (soldierRepositoryCallback != null) {
+            if (callbackSuccess) {
                 soldierRepositoryCallback.onSuccess();
             } else {
                 soldierRepositoryCallback.onError();

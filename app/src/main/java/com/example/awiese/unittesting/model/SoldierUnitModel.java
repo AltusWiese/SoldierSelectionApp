@@ -1,18 +1,12 @@
 package com.example.awiese.unittesting.model;
 
-import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 
-import java.util.List;
-
 import static com.example.awiese.unittesting.model.SoldierUnitModel.TABLE_NAME;
 
-/**
- * Created by AWiese on 2017/10/18.
- */
 
 @Entity(tableName = TABLE_NAME)
 public class SoldierUnitModel {
@@ -25,18 +19,18 @@ public class SoldierUnitModel {
 
     @PrimaryKey(autoGenerate = true)
     private int soldierId;
-    private String soldierName;
-    private String soldierAlias;
-    private String soldierNationality;
-    private String soldierUnitClass;
+    private final String soldierName;
+    private final String soldierAlias;
+    private final String soldierNationality;
+    private final String soldierUnitClass;
     @ColumnInfo(name = SOLDIER_AIM)
-    private int soldierAim;
+    private final int soldierAim;
     @ColumnInfo(name = SOLDIER_SPEED)
-    private int soldierSpeed;
+    private final int soldierSpeed;
     @ColumnInfo(name = SOLDIER_WILL)
-    private int soldierWill;
+    private final int soldierWill;
     @ColumnInfo(name = SOLDIER_DEFENSE)
-    private int soldierDefense;
+    private final int soldierDefense;
 
     public SoldierUnitModel(int soldierId, String soldierName, String soldierAlias, String soldierNationality, String soldierUnitClass,
                             int soldierAim, int soldierSpeed, int soldierWill, int soldierDefense) {

@@ -10,9 +10,8 @@ import com.example.awiese.unittesting.utils.SingleLiveEvent;
 public class AddSoldierViewModel extends ViewModel {
 
 
-    private SoldierUnitModel soldierUnitModel;
-    private SoldierRepository soldierRepository;
-    SingleLiveEvent<Boolean> addSoldierEvent = new SingleLiveEvent<>();
+    private final SoldierRepository soldierRepository;
+    private final SingleLiveEvent<Boolean> addSoldierEvent = new SingleLiveEvent<>();
 
     public AddSoldierViewModel(SoldierRepository soldierRepository) {
         this.soldierRepository = soldierRepository;
@@ -22,7 +21,7 @@ public class AddSoldierViewModel extends ViewModel {
                               String soldierNationality, String soldierUnitClass,
                               int soldierAim, int soldierSpeed, int soldierWill, int soldierDefense) {
 
-        soldierUnitModel = new SoldierUnitModel(soldierName, soldierAlias,
+        SoldierUnitModel soldierUnitModel = new SoldierUnitModel(soldierName, soldierAlias,
                 soldierNationality, soldierUnitClass,
                 soldierAim, soldierSpeed, soldierWill, soldierDefense);
         soldierRepository.addSoldier(soldierUnitModel, new SoldierRepository.SoldierRepositoryCallback() {
