@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:paddingEnd="5dp"
         android:paddingStart="5dp"
-        android:text="Name: "
+        android:text="@string/name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:paddingEnd="5dp"
         android:paddingStart="5dp"
-        android:text="TEST"
+        tools:text="TEST"
         app:layout_constraintLeft_toRightOf="@+id/soldier_name_text"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:paddingEnd="5dp"
         android:paddingStart="5dp"
-        android:text="Alias :"
+        android:text="@string/alias"
         app:layout_constraintLeft_toRightOf="@+id/display_soldier_name"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:paddingEnd="5dp"
         android:paddingStart="5dp"
-        android:text="TEST"
+        tools:text="TEST"
         app:layout_constraintLeft_toRightOf="@+id/soldier_alias_text"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:paddingEnd="5dp"
         android:paddingStart="5dp"
-        android:text="Nationality :"
+        android:text="@string/nationality"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/soldier_name_text" />
 
@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:paddingEnd="5dp"
         android:paddingStart="5dp"
-        android:text="TEST"
+        tools:text="TEST"
         app:layout_constraintLeft_toRightOf="@+id/soldier_nationality_text"
         app:layout_constraintTop_toBottomOf="@+id/display_soldier_name" />
 
@@ -72,7 +72,7 @@
         android:layout_height="wrap_content"
         android:paddingEnd="5dp"
         android:paddingStart="5dp"
-        android:text="Unit Class :"
+        android:text="@string/unit_class"
         app:layout_constraintLeft_toRightOf="@+id/display_soldier_nationality"
         app:layout_constraintTop_toBottomOf="@+id/soldier_alias_text" />
 
@@ -82,7 +82,7 @@
         android:layout_height="wrap_content"
         android:paddingEnd="5dp"
         android:paddingStart="5dp"
-        android:text="TEST"
+        tools:text="TEST"
         app:layout_constraintLeft_toRightOf="@+id/soldier_unit_class_text"
         app:layout_constraintTop_toBottomOf="@+id/display_soldier_alias" />
 
@@ -92,7 +92,7 @@
         android:layout_height="wrap_content"
         android:paddingEnd="5dp"
         android:paddingStart="5dp"
-        android:text="Aim :"
+        android:text="@string/aim"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/soldier_nationality_text" />
 
@@ -102,7 +102,7 @@
         android:layout_height="wrap_content"
         android:paddingEnd="5dp"
         android:paddingStart="5dp"
-        android:text="TEST"
+        tools:text="TEST"
         app:layout_constraintLeft_toRightOf="@+id/soldier_aim_text"
         app:layout_constraintTop_toBottomOf="@+id/display_soldier_nationality" />
 
@@ -112,7 +112,7 @@
         android:layout_height="wrap_content"
         android:paddingEnd="5dp"
         android:paddingStart="5dp"
-        android:text="Speed :"
+        android:text="@string/speed"
         app:layout_constraintLeft_toRightOf="@+id/display_soldier_aim"
         app:layout_constraintTop_toBottomOf="@+id/soldier_nationality_text" />
 
@@ -122,7 +122,7 @@
         android:layout_height="wrap_content"
         android:paddingEnd="5dp"
         android:paddingStart="5dp"
-        android:text="TEST"
+        tools:text="TEST"
         app:layout_constraintLeft_toRightOf="@+id/soldier_speed_text"
         app:layout_constraintTop_toBottomOf="@+id/display_soldier_nationality" />
 
@@ -132,7 +132,7 @@
         android:layout_height="wrap_content"
         android:paddingEnd="5dp"
         android:paddingStart="5dp"
-        android:text="Will :"
+        android:text="@string/will"
         app:layout_constraintLeft_toRightOf="@+id/display_soldier_speed"
         app:layout_constraintTop_toBottomOf="@+id/soldier_nationality_text" />
 
@@ -142,7 +142,7 @@
         android:layout_height="wrap_content"
         android:paddingEnd="5dp"
         android:paddingStart="5dp"
-        android:text="TEST"
+        tools:text="TEST"
         app:layout_constraintLeft_toRightOf="@+id/soldier_will_text"
         app:layout_constraintTop_toBottomOf="@+id/display_soldier_nationality" />
 
@@ -152,7 +152,7 @@
         android:layout_height="wrap_content"
         android:paddingEnd="5dp"
         android:paddingStart="5dp"
-        android:text="Defense :"
+        android:text="@string/defense"
         app:layout_constraintLeft_toRightOf="@+id/display_soldier_will"
         app:layout_constraintTop_toBottomOf="@+id/display_soldier_unit_class" />
 
@@ -162,7 +162,7 @@
         android:layout_height="wrap_content"
         android:paddingEnd="5dp"
         android:paddingStart="5dp"
-        android:text="TEST"
+        tools:text="TEST"
         app:layout_constraintLeft_toRightOf="@+id/soldier_defense_text"
         app:layout_constraintTop_toBottomOf="@+id/display_soldier_nationality" />
 

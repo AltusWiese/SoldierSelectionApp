@@ -10,28 +10,27 @@ import com.example.awiese.unittesting.repository.SoldierRepositoryImpl;
 public class MySingleton {
 
     private static MySingleton instance;
-    private static  Context context;
-    private SoldierDao soldierDao;
-    private SoldierRepository soldierRepository;
+    private static Context context;
 
-    //a private constructor so no instances can be made outside this class
-    public MySingleton() {}
+    public MySingleton() {
+    }
 
 
     public static synchronized MySingleton getInstance() {
-        if(instance == null) {
+        if (instance == null) {
             instance = new MySingleton();
         }
         return instance;
     }
+
     public void init(Context context) {
-        this.context = context.getApplicationContext();
+        MySingleton.context = context.getApplicationContext();
     }
 
     public void getSoldierRepository() {
         //Context context = SoldierApplication.getAppContext();
-        soldierDao = SoldierDatabase.getInstance(context).soldierDao();
-        soldierRepository = new SoldierRepositoryImpl(soldierDao);
+        SoldierDao soldierDao = SoldierDatabase.getInstance(context).soldierDao();
+        SoldierRepository soldierRepository = new SoldierRepositoryImpl(soldierDao);
 
     }
 

@@ -14,8 +14,6 @@ import com.example.awiese.unittesting.model.SoldierUnitModel;
 public abstract class SoldierDatabase extends RoomDatabase {
 
     private static final String DATABASE_NAME = "soldier";
-
-    // For Singleton instantiation
     private static final Object LOCK = new Object();
     private static volatile SoldierDatabase sInstance;
 
