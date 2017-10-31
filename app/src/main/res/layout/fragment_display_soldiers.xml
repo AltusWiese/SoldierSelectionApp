@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -10,7 +9,7 @@
         android:id="@+id/button_get_all_soldiers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Display All Soldiers"
+        android:text="@string/all_soldiers"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -19,7 +18,7 @@
         android:id="@+id/button_get_best_marksman_soldiers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Display Best Marksman"
+        android:text="@string/best_marksman"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_get_all_soldiers" />
@@ -28,7 +27,7 @@
         android:id="@+id/button_get_fastest_soldiers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Display Fastest Soldiers"
+        android:text="@string/fastest_soldiers"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_get_best_marksman_soldiers" />
@@ -37,7 +36,7 @@
         android:id="@+id/button_get_most_strong_willed_soldiers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Display Strong Willed Soldiers"
+        android:text="@string/strong_willed_soldiers"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_get_fastest_soldiers" />
@@ -46,7 +45,7 @@
         android:id="@+id/button_get_most_durable_soldiers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Display Most Durable Soldiers"
+        android:text="@string/most_durable_soldiers"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_get_most_strong_willed_soldiers" />

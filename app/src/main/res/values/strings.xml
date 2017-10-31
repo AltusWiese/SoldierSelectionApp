@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">UnitTesting</string>
+    <string name="enter_a_name">Enter a Name</string>
+    <string name="enter_an_alias">Enter an Alias</string>
+    <string name="enter_nationality">Enter Nationality</string>
+    <string name="enter_unit_class">Enter Unit Class</string>
+    <string name="add_soldier">Add Soldier</string>
+    <string name="all_soldiers">All Soldiers</string>
+    <string name="best_marksman">Best Marksman</string>
+    <string name="fastest_soldiers">Fastest Soldiers</string>
+    <string name="strong_willed_soldiers">Strong Willed Soldiers</string>
+    <string name="most_durable_soldiers">Most Durable Soldiers</string>
+    <string name="name">Name:</string>
+    <string name="alias">Alias :</string>
+    <string name="nationality">Nationality :</string>
+    <string name="unit_class">Unit Class :</string>
+    <string name="aim">Aim :</string>
+    <string name="speed">Speed :</string>
+    <string name="will">Will :</string>
+    <string name="defense">Defense :</string>
 </resources>

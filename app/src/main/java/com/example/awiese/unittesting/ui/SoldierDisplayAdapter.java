@@ -1,6 +1,5 @@
 package com.example.awiese.unittesting.ui;
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,21 +10,19 @@ import com.example.awiese.unittesting.model.SoldierUnitModel;
 
 import java.util.List;
 
-public class SoldierDisplayAdapter extends RecyclerView.Adapter<SoldierDisplayViewHolder> {
+ public class SoldierDisplayAdapter extends RecyclerView.Adapter<SoldierDisplayViewHolder> {
 
-    private final Context context;
     private List<SoldierUnitModel> listOfAllSoldiers;
 
 
-    SoldierDisplayAdapter(List<SoldierUnitModel> listOfAllSoldiers,Context context) {
+    SoldierDisplayAdapter(List<SoldierUnitModel> listOfAllSoldiers) {
         this.listOfAllSoldiers = listOfAllSoldiers;
-        this.context = context;
 
     }
     @Override
     public SoldierDisplayViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.individual_soldier_data_view, parent, false);
+                .inflate(R.layout.recycler_view_soldier_list, parent, false);
         return new SoldierDisplayViewHolder(v);
     }
 

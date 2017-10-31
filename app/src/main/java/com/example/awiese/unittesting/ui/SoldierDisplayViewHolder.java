@@ -6,22 +6,19 @@ import android.widget.TextView;
 
 import com.example.awiese.unittesting.R;
 
-/**
- * Created by AWiese on 2017/10/24.
- */
 
-public class SoldierDisplayViewHolder extends RecyclerView.ViewHolder {
+class SoldierDisplayViewHolder extends RecyclerView.ViewHolder {
 
-    TextView soldierNameTextView;
-    TextView soldierAliasTextView;
-    TextView soldierNationalityTextView;
-    TextView soldierUnitClassTextView;
-    TextView soldierAimTextView;
-    TextView soldierSpeedTextView;
-    TextView soldierWillTextView;
-    TextView soldierDefenseTextView;
+    final TextView soldierNameTextView;
+    final TextView soldierAliasTextView;
+    final TextView soldierNationalityTextView;
+    final TextView soldierUnitClassTextView;
+    final TextView soldierAimTextView;
+    final TextView soldierSpeedTextView;
+    final TextView soldierWillTextView;
+    final TextView soldierDefenseTextView;
 
-    public SoldierDisplayViewHolder(View soldierListView) {
+    SoldierDisplayViewHolder(View soldierListView) {
         super(soldierListView);
 
         soldierNameTextView = soldierListView.findViewById(R.id.display_soldier_name);

@@ -22,27 +22,21 @@ import java.util.Random;
 public class SoldierAddFragment extends Fragment {
 
     private static final String TAG = "SoldierAddFragment";
-    AddSoldierViewModel addSoldierViewModel;
-    SoldierDao soldierDao;
-    SoldierRepository soldierRepository;
     private EditText addSoldierName, addSoldierAlias, addSoldierNationality, addSoldierUnitClass;
     private Button addSoldierButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.soldier_add_new_fragment, container, false);
+        View view = inflater.inflate(R.layout.fragment_add_new_soldier, container, false);
         setupViews(view);
         setupClickListeners();
         return view;
     }
 
     private void setupClickListeners() {
-        addSoldierButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                addNewSoldier();
-                Log.i(TAG, "Added a new soldier.");
-            }
+        addSoldierButton.setOnClickListener(v -> {
+            addNewSoldier();
+            Log.i(TAG, "Added a new soldier.");
         });
     }
 
@@ -56,15 +50,15 @@ public class SoldierAddFragment extends Fragment {
         int soldierWill = randomStatsGenerator();
         int soldierDefense = randomStatsGenerator();
 
-        soldierDao = SoldierDatabase.getInstance(getContext()).soldierDao();
-        soldierRepository = new SoldierRepositoryImpl(soldierDao);
-        addSoldierViewModel = new AddSoldierViewModel(soldierRepository);
+        SoldierDao soldierDao = SoldierDatabase.getInstance(getContext()).soldierDao();
+        SoldierRepository soldierRepository = new SoldierRepositoryImpl(soldierDao);
+        AddSoldierViewModel addSoldierViewModel = new AddSoldierViewModel(soldierRepository);
 
         addSoldierViewModel.addNewSoldier(soldierName, soldierAlias, soldierNationality,
                 soldierUnitClass, soldierAim, soldierSpeed, soldierWill, soldierDefense);
     }
 
-    public int randomStatsGenerator() {
+    private int randomStatsGenerator() {
         Random randomStatGenerator = new Random();
         return randomStatGenerator.nextInt(90 - 20) + 20;
     }
