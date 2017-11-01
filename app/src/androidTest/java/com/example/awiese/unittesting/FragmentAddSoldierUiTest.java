@@ -17,6 +17,7 @@ import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
+import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
 
 @RunWith(AndroidJUnit4.class)
@@ -28,7 +29,10 @@ public class FragmentAddSoldierUiTest {
     private String mSoldierAlias;
     private String mSoldierNationality;
     private String mSoldierUnitClass;
-
+    private String mSoldierNameCleared;
+    private String mSoldierAliasCleared;
+    private String mSoldierNationalityCleared;
+    private String mSoldierUnitClassCleared;
 
     @Rule
     public ActivityTestRule<MainActivity> mainActivityActivityTestRule = new ActivityTestRule<>(MainActivity.class);
@@ -39,6 +43,10 @@ public class FragmentAddSoldierUiTest {
         mSoldierAlias = "MacGyver";
         mSoldierNationality = "American";
         mSoldierUnitClass = "Grenadier";
+        mSoldierNameCleared = "";
+        mSoldierAliasCleared = "";
+        mSoldierNationalityCleared = "";
+        mSoldierUnitClassCleared = "";
     }
 
     @Test
@@ -49,8 +57,11 @@ public class FragmentAddSoldierUiTest {
         onView(withId(R.id.add_soldier_nationality)).perform(typeText(mSoldierNationality));
         onView(withId(R.id.add_soldier_unit_class)).perform(typeText(mSoldierUnitClass));
         closeSoftKeyboard();
-        onView(withId(R.id.add_soldier_button)).perform(click());
-
         onView(withId(R.id.add_soldier_button)).perform(click()).check(matches(isDisplayed()));
+        onView(withId(R.id.add_soldier_name)).check(matches(withText(mSoldierNameCleared)));
+        onView(withId(R.id.add_soldier_alias)).check(matches(withText(mSoldierAliasCleared)));
+        onView(withId(R.id.add_soldier_nationality)).check(matches(withText(mSoldierNationalityCleared)));
+        onView(withId(R.id.add_soldier_unit_class)).check(matches(withText(mSoldierUnitClassCleared)));
     }
+
 }
