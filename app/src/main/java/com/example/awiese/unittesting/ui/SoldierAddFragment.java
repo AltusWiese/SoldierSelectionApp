@@ -3,12 +3,12 @@ package com.example.awiese.unittesting.ui;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.awiese.unittesting.R;
 import com.example.awiese.unittesting.dao.SoldierDao;
@@ -36,8 +36,17 @@ public class SoldierAddFragment extends Fragment {
     private void setupClickListeners() {
         addSoldierButton.setOnClickListener(v -> {
             addNewSoldier();
-            Log.i(TAG, "Added a new soldier.");
+            Toast.makeText(getContext(), "Added Soldier " + addSoldierName.getText().toString() + " to database.", Toast.LENGTH_LONG).show();
+            clearTextViews();
+
         });
+    }
+
+    private void clearTextViews() {
+        addSoldierName.setText("");
+        addSoldierAlias.setText("");
+        addSoldierNationality.setText("");
+        addSoldierUnitClass.setText("");
     }
 
     private void addNewSoldier() {
