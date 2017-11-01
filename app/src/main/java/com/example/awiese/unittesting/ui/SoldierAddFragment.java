@@ -21,7 +21,6 @@ import java.util.Random;
 
 public class SoldierAddFragment extends Fragment {
 
-    private static final String TAG = "SoldierAddFragment";
     private EditText addSoldierName, addSoldierAlias, addSoldierNationality, addSoldierUnitClass;
     private Button addSoldierButton;
 
@@ -36,8 +35,10 @@ public class SoldierAddFragment extends Fragment {
     private void setupClickListeners() {
         addSoldierButton.setOnClickListener(v -> {
             addNewSoldier();
-            Toast.makeText(getContext(), "Added Soldier " + addSoldierName.getText().toString() + " to database.", Toast.LENGTH_LONG).show();
-            clearTextViews();
+            if (addNewSoldier() == 1) {
+                Toast.makeText(getContext(), "Added Soldier " + addSoldierName.getText().toString() + " to database.", Toast.LENGTH_LONG).show();
+                clearTextViews();
+            }
 
         });
     }
@@ -49,7 +50,7 @@ public class SoldierAddFragment extends Fragment {
         addSoldierUnitClass.setText("");
     }
 
-    private void addNewSoldier() {
+    private int addNewSoldier() {
         String soldierName = addSoldierName.getText().toString();
         String soldierAlias = addSoldierAlias.getText().toString();
         String soldierNationality = addSoldierNationality.getText().toString();
@@ -59,12 +60,18 @@ public class SoldierAddFragment extends Fragment {
         int soldierWill = randomStatsGenerator();
         int soldierDefense = randomStatsGenerator();
 
-        SoldierDao soldierDao = SoldierDatabase.getInstance(getContext()).soldierDao();
-        SoldierRepository soldierRepository = new SoldierRepositoryImpl(soldierDao);
-        AddSoldierViewModel addSoldierViewModel = new AddSoldierViewModel(soldierRepository);
+        if (soldierName.equals("") || soldierAlias.equals("") || soldierNationality.equals("") || soldierUnitClass.equals("")) {
+            Toast.makeText(getContext(), "Please make sure all fields contain information, then try again.", Toast.LENGTH_LONG).show();
+            return 0;
+        } else {
+            SoldierDao soldierDao = SoldierDatabase.getInstance(getContext()).soldierDao();
+            SoldierRepository soldierRepository = new SoldierRepositoryImpl(soldierDao);
+            AddSoldierViewModel addSoldierViewModel = new AddSoldierViewModel(soldierRepository);
 
-        addSoldierViewModel.addNewSoldier(soldierName, soldierAlias, soldierNationality,
-                soldierUnitClass, soldierAim, soldierSpeed, soldierWill, soldierDefense);
+            addSoldierViewModel.addNewSoldier(soldierName, soldierAlias, soldierNationality,
+                    soldierUnitClass, soldierAim, soldierSpeed, soldierWill, soldierDefense);
+            return 1;
+        }
     }
 
     private int randomStatsGenerator() {

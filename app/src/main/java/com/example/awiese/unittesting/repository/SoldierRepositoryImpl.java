@@ -2,7 +2,6 @@ package com.example.awiese.unittesting.repository;
 
 import android.arch.lifecycle.LiveData;
 import android.os.AsyncTask;
-import android.util.Log;
 
 import com.example.awiese.unittesting.dao.SoldierDao;
 import com.example.awiese.unittesting.model.SoldierUnitModel;
@@ -25,7 +24,7 @@ public class SoldierRepositoryImpl implements SoldierRepository, SoldierReposito
 
     @Override
     public void addSoldier(SoldierUnitModel soldierUnitModel, SoldierRepositoryCallback callback) {
-        SoldierAsyncTask soldierAsyncTask = new SoldierAsyncTask(callback, soldierDao);
+        final SoldierAsyncTask soldierAsyncTask = new SoldierAsyncTask(callback, soldierDao);
         soldierAsyncTask.execute(soldierUnitModel);
     }
 
@@ -61,7 +60,7 @@ public class SoldierRepositoryImpl implements SoldierRepository, SoldierReposito
 
     @Override
     public void onSuccess() {
-        Log.d("Awe", "DIE POEF WERK!");
+
     }
 
     @Override

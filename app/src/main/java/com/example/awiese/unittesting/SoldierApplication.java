@@ -7,7 +7,7 @@ import com.example.awiese.unittesting.utils.MySingleton;
 
 public class SoldierApplication extends Application {
 
-    private MySingleton singleton = new MySingleton();
+    private final MySingleton singleton = new MySingleton();
 
     @Override
     public void onCreate() {

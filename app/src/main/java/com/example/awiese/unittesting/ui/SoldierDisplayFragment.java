@@ -23,7 +23,7 @@ import java.util.ArrayList;
 public class SoldierDisplayFragment extends Fragment {
 
     private SoldierDisplayAdapter soldierDisplayAdapter;
-    private final SoldierApplication soldierApplication = new SoldierApplication();
+//    private final SoldierApplication soldierApplication = new SoldierApplication();
     private OrderSoldiersByGroupViewModel orderSoldiersByGroupViewModel;
 
 

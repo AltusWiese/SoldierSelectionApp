@@ -15,7 +15,6 @@ public class MySingleton {
     public MySingleton() {
     }
 
-
     public static synchronized MySingleton getInstance() {
         if (instance == null) {
             instance = new MySingleton();
@@ -28,7 +27,6 @@ public class MySingleton {
     }
 
     public void getSoldierRepository() {
-        //Context context = SoldierApplication.getAppContext();
         SoldierDao soldierDao = SoldierDatabase.getInstance(context).soldierDao();
         SoldierRepository soldierRepository = new SoldierRepositoryImpl(soldierDao);
 
