@@ -36,7 +36,7 @@ public class SoldierAddFragment extends Fragment {
     private void setupClickListeners() {
         addSoldierButton.setOnClickListener(v -> {
             addNewSoldier();
-            Toast.makeText(getContext(), "Added Soldier " + addSoldierName + "to database.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "Added Soldier " + addSoldierName.getText().toString() + " to database.", Toast.LENGTH_LONG).show();
             clearTextViews();
 
         });
