@@ -11,7 +11,7 @@ public class AddSoldierViewModel extends ViewModel {
 
 
     private final SoldierRepository soldierRepository;
-    private final SingleLiveEvent<Boolean> addSoldierEvent = new SingleLiveEvent<>();
+    public final SingleLiveEvent<Boolean> addSoldierEvent = new SingleLiveEvent<>();
 
     public AddSoldierViewModel(SoldierRepository soldierRepository) {
         this.soldierRepository = soldierRepository;
