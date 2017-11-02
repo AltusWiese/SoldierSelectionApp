@@ -10,7 +10,7 @@ import com.example.awiese.unittesting.model.SoldierUnitModel;
 
 import java.util.List;
 
- public class SoldierDisplayAdapter extends RecyclerView.Adapter<SoldierDisplayViewHolder> {
+ class SoldierDisplayAdapter extends RecyclerView.Adapter<SoldierDisplayViewHolder> {
 
     private List<SoldierUnitModel> listOfAllSoldiers;
 

@@ -7,6 +7,7 @@ android {
         applicationId "com.example.awiese.unittesting"
         minSdkVersion 26
         targetSdkVersion 26
+        multiDexEnabled = true
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -30,13 +31,13 @@ android {
 
 dependencies {
     testCompile 'junit:junit:4.12'
-    testCompile 'org.mockito:mockito-core:2.8.9'
+    testCompile 'org.mockito:mockito-core:2.10.0'
     testCompile 'org.hamcrest:hamcrest-all:1.3'
 
     compile 'com.android.support:recyclerview-v7:26.1.0'
     compile 'android.arch.lifecycle:extensions:1.0.0-rc1'
     compile 'android.arch.persistence.room:runtime:1.0.0-rc1'
-    compile 'com.android.support:support-annotations:26.1.0'
+    compile 'com.android.support:support-annotations:27.0.0'
 
     androidTestCompile 'com.android.support.test:runner:1.0.1'
     androidTestCompile 'com.android.support.test.espresso:espresso-core:3.0.1'

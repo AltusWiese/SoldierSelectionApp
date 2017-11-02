@@ -10,7 +10,7 @@ import com.example.awiese.unittesting.model.SoldierUnitModel;
 import java.util.List;
 
 
-public class SoldierRepositoryImpl implements SoldierRepository, SoldierRepository.SoldierRepositoryCallback {
+public class SoldierRepositoryImpl implements SoldierRepository {
 
     private final SoldierDao soldierDao;
     private LiveData<List<SoldierUnitModel>> listOfSoldiers;
@@ -20,12 +20,9 @@ public class SoldierRepositoryImpl implements SoldierRepository, SoldierReposito
         this.soldierDao = soldierDao;
     }
 
-
-
-
     @Override
     public void addSoldier(SoldierUnitModel soldierUnitModel, SoldierRepositoryCallback callback) {
-        SoldierAsyncTask soldierAsyncTask = new SoldierAsyncTask(callback, soldierDao);
+        final SoldierAsyncTask soldierAsyncTask = new SoldierAsyncTask(callback, soldierDao);
         soldierAsyncTask.execute(soldierUnitModel);
     }
 
@@ -59,16 +56,6 @@ public class SoldierRepositoryImpl implements SoldierRepository, SoldierReposito
         return listOfSoldiers;
     }
 
-    @Override
-    public void onSuccess() {
-        Log.d("Awe", "DIE POEF WERK!");
-    }
-
-    @Override
-    public void onError() {
-
-    }
-
     private static class SoldierAsyncTask extends AsyncTask<SoldierUnitModel, Void, Void> {
 
         private boolean callbackSuccess;
@@ -87,6 +74,7 @@ public class SoldierRepositoryImpl implements SoldierRepository, SoldierReposito
         @Override
         protected Void doInBackground(SoldierUnitModel... soldierUnitModels) {
             soldierDao.addNewSoldier(soldierUnitModels[0]);
+            Log.d("SoldierRepoAsync", "I was created!");
             return null;
         }
 

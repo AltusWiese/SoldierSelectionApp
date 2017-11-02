@@ -5,8 +5,8 @@
     <string name="enter_nationality">Enter Nationality</string>
     <string name="enter_unit_class">Enter Unit Class</string>
     <string name="add_soldier">Add Soldier</string>
-    <string name="all_soldiers">All Soldiers</string>
-    <string name="best_marksman">Best Marksman</string>
+    <string name="all_soldiers">View All Soldiers</string>
+    <string name="best_marksman">Most Accurate Soldiers</string>
     <string name="fastest_soldiers">Fastest Soldiers</string>
     <string name="strong_willed_soldiers">Strong Willed Soldiers</string>
     <string name="most_durable_soldiers">Most Durable Soldiers</string>
