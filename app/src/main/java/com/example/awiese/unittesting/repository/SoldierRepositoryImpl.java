@@ -2,6 +2,7 @@ package com.example.awiese.unittesting.repository;
 
 import android.arch.lifecycle.LiveData;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.example.awiese.unittesting.dao.SoldierDao;
 import com.example.awiese.unittesting.model.SoldierUnitModel;
@@ -9,7 +10,7 @@ import com.example.awiese.unittesting.model.SoldierUnitModel;
 import java.util.List;
 
 
-public class SoldierRepositoryImpl implements SoldierRepository, SoldierRepository.SoldierRepositoryCallback {
+public class SoldierRepositoryImpl implements SoldierRepository {
 
     private final SoldierDao soldierDao;
     private LiveData<List<SoldierUnitModel>> listOfSoldiers;
@@ -18,9 +19,6 @@ public class SoldierRepositoryImpl implements SoldierRepository, SoldierReposito
     public SoldierRepositoryImpl(SoldierDao soldierDao) {
         this.soldierDao = soldierDao;
     }
-
-
-
 
     @Override
     public void addSoldier(SoldierUnitModel soldierUnitModel, SoldierRepositoryCallback callback) {
@@ -58,16 +56,6 @@ public class SoldierRepositoryImpl implements SoldierRepository, SoldierReposito
         return listOfSoldiers;
     }
 
-    @Override
-    public void onSuccess() {
-
-    }
-
-    @Override
-    public void onError() {
-
-    }
-
     private static class SoldierAsyncTask extends AsyncTask<SoldierUnitModel, Void, Void> {
 
         private boolean callbackSuccess;
@@ -86,6 +74,7 @@ public class SoldierRepositoryImpl implements SoldierRepository, SoldierReposito
         @Override
         protected Void doInBackground(SoldierUnitModel... soldierUnitModels) {
             soldierDao.addNewSoldier(soldierUnitModels[0]);
+            Log.d("SoldierRepoAsync", "I was created!");
             return null;
         }
 

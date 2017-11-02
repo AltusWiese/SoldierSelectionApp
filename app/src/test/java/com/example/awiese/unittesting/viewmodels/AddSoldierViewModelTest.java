@@ -31,10 +31,10 @@ public class AddSoldierViewModelTest {
     private static final String soldierAlias = "OscarMike";
     private static final String soldierNationality = "Spanish";
     private static final String soldierUnitClass = "Sniper";
-    private static final int soldierAim = 65;
-    private static final int soldierSpeed = 58;
-    private static final int soldierWill = 42;
-    private static final int soldierDefense = 78;
+    private static final int soldierAim = 82;
+    private static final int soldierSpeed = 93;
+    private static final int soldierWill = 68;
+    private static final int soldierDefense = 82;
 
     @Before
     public void setUp() throws Exception {

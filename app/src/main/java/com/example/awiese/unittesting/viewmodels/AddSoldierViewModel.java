@@ -11,7 +11,7 @@ public class AddSoldierViewModel extends ViewModel {
 
 
     private final SoldierRepository soldierRepository;
-    public final SingleLiveEvent<Boolean> addSoldierEvent = new SingleLiveEvent<>();
+     final SingleLiveEvent<Boolean> addSoldierEvent = new SingleLiveEvent<>();
 
     public AddSoldierViewModel(SoldierRepository soldierRepository) {
         this.soldierRepository = soldierRepository;
@@ -24,7 +24,8 @@ public class AddSoldierViewModel extends ViewModel {
         SoldierUnitModel soldierUnitModel = new SoldierUnitModel(soldierName, soldierAlias,
                 soldierNationality, soldierUnitClass,
                 soldierAim, soldierSpeed, soldierWill, soldierDefense);
-        soldierRepository.addSoldier(soldierUnitModel, new SoldierRepository.SoldierRepositoryCallback() {
+        soldierRepository.addSoldier(soldierUnitModel, new SoldierRepository.SoldierRepositoryCallback()
+        {
             @Override
             public void onSuccess() {
                 addSoldierEvent.setValue(true);

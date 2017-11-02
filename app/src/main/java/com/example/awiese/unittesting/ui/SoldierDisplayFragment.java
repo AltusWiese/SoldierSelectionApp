@@ -14,8 +14,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.awiese.unittesting.R;
-import com.example.awiese.unittesting.SoldierApplication;
-
 import com.example.awiese.unittesting.viewmodels.OrderSoldiersByGroupViewModel;
 
 import java.util.ArrayList;
@@ -23,7 +21,6 @@ import java.util.ArrayList;
 public class SoldierDisplayFragment extends Fragment {
 
     private SoldierDisplayAdapter soldierDisplayAdapter;
-//    private final SoldierApplication soldierApplication = new SoldierApplication();
     private OrderSoldiersByGroupViewModel orderSoldiersByGroupViewModel;
 
 
@@ -35,7 +32,6 @@ public class SoldierDisplayFragment extends Fragment {
         setupRecyclerView(view);
         setupViews(view);
         setupClickListeners();
-        SoldierApplication.getSoldierRepository();
 
         return view;
     }
@@ -47,9 +43,9 @@ public class SoldierDisplayFragment extends Fragment {
 
         displayFastestSoldiers.setOnClickListener(v -> setViewModelGetListOfFastestSoldiers());
 
-        displayMostStrongWilledSoldiers.setOnClickListener(v -> setViewModelGetListOfMostDurableSoldiers());
+        displayMostStrongWilledSoldiers.setOnClickListener(v -> setViewModelGetListOfMostStrongWilledSoldiers());
 
-        displayMostHardenedSoldiers.setOnClickListener(v -> setViewModelGetListOfMostStrongWilledSoldiers());
+        displayMostHardenedSoldiers.setOnClickListener(v -> setViewModelGetListOfMostDurableSoldiers());
     }
 
     private void setupRecyclerView(View view) {
