@@ -1,9 +1,9 @@
 <application>
   <component name="FindSettings">
-    <option name="customScope" value="Project 'snowball-event-android'" />
-    <option name="defaultScopeName" value="Project 'snowball-event-android'" />
+    <option name="customScope" value="Project 'Site_Management_System'" />
+    <option name="defaultScopeName" value="Project 'Site_Management_System'" />
     <option name="localRegularExpressions" value="true" />
     <option name="LOCAL_REGULAR_EXPRESSIONS" value="true" />
-    <option name="SEARCH_SCOPE" value="Project 'snowball-event-android'" />
+    <option name="SEARCH_SCOPE" value="Project 'Site_Management_System'" />
   </component>
 </application>
