@@ -3,6 +3,7 @@
     <extensionMap>
       <mapping pattern="txt" type="PLAIN_TEXT" />
       <mapping pattern="Readme" type="PLAIN_TEXT" />
+      <mapping pattern="my_ca" type="PLAIN_TEXT" />
       <mapping ext="tracking" type="PLAIN_TEXT" />
       <mapping ext="keystore" type="PLAIN_TEXT" />
     </extensionMap>
